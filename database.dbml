@@ -1,0 +1,20 @@
+Project set_list{
+  database_type: 'PostgreSQL'
+  Note : 'still practicing'
+}
+
+Table artists as A{
+  id int [pk, increment]
+  name varchar
+  created_at timestamp 
+  updated_at timestamp 
+}
+
+Table songs{
+  title varchar
+  length integer
+  play_count integer
+  created_at timestamp
+  updated_at timestamp
+  artist_id int [ref: > A.id]
+}
